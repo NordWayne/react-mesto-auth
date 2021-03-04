@@ -14,7 +14,7 @@ export default function Card({card,onCardClick,onCardLike,onCardDelete}){
     const isOwn = card.owner._id === currentUser._id;
     const isLiked = card.likes.some(i => i._id === currentUser._id);
     return(
-        <li key = {card._id} className="card">
+        <li className="card">
             <img className="card__photo" src={card.link} alt={card.name} onClick={handleClick}/>
             {isOwn && <button className="card__delete" type="button" onClick={handleDeleteCard}></button>}
             <div className="card__bottom">

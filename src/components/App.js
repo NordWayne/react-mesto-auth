@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 import Header from "./Header";
 import Main from "./Main";
+import Footer from"./Footer";
 import Login from "./Login"
 import InfoToolTip from "./InfoTooltip";
 import Register from "./Register"
@@ -49,12 +50,18 @@ function App() {
             .then((data) => {
                 setCurrentUser(data)
             })
+            .catch(err=>{
+                console.log(err)
+            })
     }
 
     function handleUpdateAvatar(link) {
         api.editUserAvatar(link)
             .then((data) => {
                 setCurrentUser(data)
+            })
+            .catch(err=>{
+                console.log(err)
             })
     }
 
@@ -70,15 +77,24 @@ function App() {
         const isLiked = card.likes.some(i => i._id === currentUser._id);
         console.log(isLiked)
         if (!isLiked) {
-            api.likeCard(card._id).then((newCard) => {
+            api.likeCard(card._id)
+                .then((newCard) => {
                 const newCards = cards.map((c) => c._id === card._id ? newCard : c);
                 setCard(newCards);
-            });
+            })
+                .catch(err=>{
+                    console.log(err)
+            })
+
         } else {
-            api.unlikeCard(card._id).then((newCard) => {
-                const newCards = cards.map((c) => c._id === card._id ? newCard : c);
-                setCard(newCards);
-            });
+            api.unlikeCard(card._id)
+                .then((newCard) => {
+                    const newCards = cards.map((c) => c._id === card._id ? newCard : c);
+                    setCard(newCards);
+            })
+                .catch(err=>{
+                    console.log(err)
+                })
         }
 
     }
@@ -152,7 +168,7 @@ function App() {
     }
     const history = useHistory();
     const [email, setEmail] = useState("")
-    const [isLoggedIn, setIsLoggedIn] = useState(true);
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [isRegSucces, setIsRegSucces] = useState(false)
     const [cards, setCard] = useState([]);
     const [currentUser, setCurrentUser] = useState({});
@@ -202,6 +218,7 @@ function App() {
                             <Register onSubmit={handleRegSubmit}/>
                         </Route>
                     </Switch>
+                    { isLoggedIn && <Footer/>}
 
                     <InfoToolTip isRegSucces={isRegSucces} isOpen={isInfoPopupOpen} onClose={closeAllPopups}/>
                     <EditProfilePopup isOpen={isEditProfilePopupOpen} onClose={closeAllPopups}

@@ -1,7 +1,7 @@
 import editAvatar from "../images/editAvatar.svg";
 import editButton from "../images/EditButton.svg";
 import addButton from "../images/AddButton.svg";
-import Footer from"./Footer";
+
 
 import {useContext} from "react";
 
@@ -41,7 +41,7 @@ export default function Main({onEditAvatar, onEditProfile, onAddPlace, onCardCli
                 </ul>
             </section>
         </main>
-        <Footer/>
+
         </>
     )
 }
