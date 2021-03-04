@@ -1,0 +1,7 @@
+.card__photo{
+    border-radius: 14px 14px 0 0;
+    width:100%;
+    min-height: 282px;
+    max-height: 282px;
+    object-fit: cover;
+}
