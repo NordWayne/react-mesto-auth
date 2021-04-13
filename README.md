@@ -1,9 +1,9 @@
 # mesto-react
-Проект создан в ходе прохождения курса "Веб-разработчик" в Яндекс.Практикуме. 
-## Использованные технологии:
+The project was created during the course "Web developer" in Yandex.Praktikum.
+## Techs:
  - React
- - Функциональные компоненты, хуки
+ - Functional components, Hooks
  - React Router
-## npm команды
+## npm commands
  - npm start
  - npm build
