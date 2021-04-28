@@ -1,12 +1,13 @@
-# Место
-Проект был выполнен в ходе прохождения курса "Веб-разработчик" в Яндекс.Практикуме
-## Использованные технологии:
+# Project Mesto
+The project was created during the course "Web developer" in Yandex.Praktikum.
+## Technologies:
  - React
- - Функциональные компоненты, Hooks
+ - Functional components, hooks
  - React Router
-## npm команды
+
+## npm commands
  - npm start
  - npm build
 
-Проект можно посмотреть по ссылке 
+Link:
 https://mesto.nordic.nomoredomains.icu/
